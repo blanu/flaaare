@@ -1,41 +1,7 @@
-function addTab(data)
-{
-  log('addTab: '+data);
-
-  $("#tabs").tabs('add', '/waves/'+data.id, data.name);
-}
-
-function delTab(data)
-{
-  log('delTab: '+data);
-
-  $("#tabs > div > div").each(function(index, item) {
-    log('checking '+item+' '+index+' '+$(item).attr('id'));
-    if($(item).attr('id')==data)
-    {
-      log('removing tab '+index);
-      $("#tabs").tabs('remove', index);
-    }
-  });
-}
-
-function renameTab(data)
-{
-  log('renameTab: '+data);
-  for(var waveid in data)
-  {
-    name=data[waveid];
-    log(name);
-
-    var i=null;
-    $('#'+waveid+'-label').text(name);
-  }
-}
-
 function getContacts()
 {
   log('get contacts');
-  var url='/contacts';
+  var url='http://freefallsocial.appspot.com/contacts';
   $.getJSON(url, gotContacts);
 }
 
