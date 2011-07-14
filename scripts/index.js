@@ -1,7 +1,7 @@
 function getContacts()
 {
   log('get contacts');
-  var url='http://freefallsocial.appspot.com/contacts';
+  var url='/contacts';
   $.getJSON(url, gotContacts);
 }
 
