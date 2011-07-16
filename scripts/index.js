@@ -1,4 +1,4 @@
-functon login()
+function login()
 {
   log('get loggedin');
   var url='/loggedin';
