@@ -1,3 +1,25 @@
+functon login()
+{
+  log('get loggedin');
+  var url='/loggedin';
+  $.getJSON(url, gotLogin);
+}
+
+function gotLogin(loggedin)
+{
+  log('~ got loggedin ~');
+  log(loggedin)
+
+  if(loggedin)
+  {
+    getContacts();
+  }
+  else
+  {
+    window.location='/login';
+  }
+}
+
 function getContacts()
 {
   log('get contacts');
@@ -59,7 +81,7 @@ function initIndex()
   $("#tabs").show();
   $("#people").show();
 
-  getContacts();
+  login();
 }
 
 $(document).ready(initIndex);
