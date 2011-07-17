@@ -16,7 +16,7 @@ function gotLogin(loggedin)
   }
   else
   {
-    window.location='/login';
+    window.open('http://freefallsocial.appspot.com/login');
   }
 }
 
