@@ -40,8 +40,8 @@ function gotLogin(result)
     sessionid=result[1];
     callback='http://www.flaaare.com/';
     url='http://freefallsocial.appspot.com/login/'+sessionid+'/'+encode(callback);
-    log(url);
-    window.open(url);
+    $('#googleLogin').attr('href', url);
+    $('#googleLogin').show();
   }
 }
 
