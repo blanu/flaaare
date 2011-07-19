@@ -36,9 +36,11 @@ function gotLogin(result)
   }
   else
   {
-    sessionid=result[1]
-    callback='http://db.flaaare.com/';
+    log('logging in');
+    sessionid=result[1];
+    callback='http://www.flaaare.com/';
     url='http://freefallsocial.appspot.com/login/'+sessionid+'/'+encode(callback);
+    log(url);
     window.open(url);
   }
 }
