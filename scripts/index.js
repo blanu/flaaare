@@ -1,3 +1,19 @@
+function encode(str)
+{
+  var r="";
+  var e=str.length;
+  var c=0;
+  var h;
+  while(c<e)
+  {
+    h=str.charCodeAt(c++).toString(16);
+    while(h.length<3) h="0"+h;
+    r+=h;
+  }
+
+  return r;
+}
+
 function login()
 {
   log('get loggedin');
@@ -5,10 +21,12 @@ function login()
   $.getJSON(url, gotLogin);
 }
 
-function gotLogin(loggedin)
+function gotLogin(result)
 {
   log('~ got loggedin ~');
-  log(loggedin)
+  log(result)
+
+  loggedin=result[0]
 
   if(loggedin)
   {
@@ -16,7 +34,10 @@ function gotLogin(loggedin)
   }
   else
   {
-    window.open('http://freefallsocial.appspot.com/login');
+    sessionid=result[1]
+    callback='http://db.flaaare.com/';
+    url='http://freefallsocial.appspot.com/login/'+sessionid+'/'+encode(callback);
+    window.open(url);
   }
 }
 
