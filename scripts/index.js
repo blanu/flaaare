@@ -24,9 +24,11 @@ function login()
 function gotLogin(result)
 {
   log('~ got loggedin ~');
-  log(result)
+  log(result);
 
-  loggedin=result[0]
+  loggedin=result[0];
+  log(loggedin);
+  log(loggedin==true);
 
   if(loggedin)
   {
