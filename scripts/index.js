@@ -58,7 +58,7 @@ function gotLogin(result)
     callback='http://www.flaaare.com/';
     url='http://freefallsocial.appspot.com/login/'+sessionid+'/'+encode(callback);
     $('#googleLogin').attr('href', url);
-    $('#googleLogin').show();
+    $('#login').show();
   }
 }
 
