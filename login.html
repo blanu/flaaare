@@ -37,7 +37,7 @@
     <script src="http://connect.facebook.net/en_US/all.js"></script>
     <script>
       // initialize the library with the API key
-      FB.init({ apiKey: '248930761793687', xfbml: true });
+      FB.init({ apiKey: '248930761793687', status: true, cookie: true, xfbml: true, oauth: true });
 
       // fetch the status on load
       FB.getLoginStatus(handleSessionResponse);
