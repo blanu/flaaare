@@ -8,6 +8,26 @@ function gotFriends(data)
   {
     console.log(friends[x].name);
   }
+
+  $('.friends').empty();
+
+  s='<table>';
+  for(var x=0; x<friends.length; x++)
+  {
+    s=s+'<tr><td>';
+    if(typeof(friends[x].image)!==undefined && friends[x].image!=null && friends[x].image!='null')
+    {
+      s=s+'<td><img src="'+friends[x].image+'"/></td>';
+    }
+    else
+    {
+      s=s+'<td><img src="https://wave.google.com/wave/static/images/unknown.jpg"/></td>';
+    }
+    s=s+'<td>'+friends[x].name+'</td>';
+    s=s+'</tr>';
+  }
+  s=s+'</table>'
+  $('.friends').append(s);
 }
 
 function loggedIn(response)
