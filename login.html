@@ -61,6 +61,11 @@
         $('#user-info').hide('fast');
       }
 
+      function gotFriends(data)
+      {
+        alert(data);
+      }
+
       // handle a session response from any of the auth related calls
       function handleSessionResponse(response) {
         // if we dont have a session, just hide the user info
@@ -80,6 +85,8 @@
             $('#user-info').html('<img src="' + user.pic + '">' + user.name).show('fast');
           }
         );
+
+        $.getJSON('/facebook/friends', gotFriends);
       }
     </script>
   </body>
