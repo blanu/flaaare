@@ -65,7 +65,8 @@ function gotLogin(result)
 function update()
 {
   var status=$('#updateField').text();
-  console('status: '+status);
+  log('status: '+status);
+  return false;
 }
 
 function initIndex()
