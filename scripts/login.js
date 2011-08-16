@@ -32,6 +32,7 @@ function loggedIn(response)
     $('#logoutDiv').hide('fast');
     $('#loginDiv').show('fast');
     $('#update').hide('fast');
+    $('#flares').hide('fast');
     return;
   }
   else

@@ -41,6 +41,11 @@ function gotState(result)
 {
   log('gotState');
   log(result);
+
+  $('#flareStatus').text(result.status);
+  $('#flareTime').text(result.time);
+
+  $('#flares').show('slow');
 }
 
 function update()
