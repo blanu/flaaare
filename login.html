@@ -64,6 +64,12 @@
       function gotFriends(data)
       {
         console.log('gotFriends');
+
+        var friends=data.data;
+        for(friend in friends)
+        {
+          console.log(friend.name);
+        }
       }
 
       // handle a session response from any of the auth related calls
