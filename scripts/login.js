@@ -60,6 +60,7 @@ function loggedIn(response)
   );
 
   $.getJSON('http://www.flaaare.com/facebook/friends', gotFriends);
+  getState();
 }
 
 function login()

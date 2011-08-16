@@ -31,35 +31,15 @@ function encode(input)
     return output;
 }
 
-function login()
+function getState()
 {
-  log('get loggedin');
-  var url='/loggedin';
-  $.getJSON(url, gotLogin);
+  $.getJSON('/getState', gotState);
 }
 
-function gotLogin(result)
+function gotState(result)
 {
-  log('~ got loggedin ~');
+  log('gotState');
   log(result);
-
-  loggedin=result[0];
-  log(loggedin);
-  log(loggedin==true);
-
-  if(loggedin)
-  {
-    getContacts();
-  }
-  else
-  {
-    log('logging in');
-    sessionid=result[1];
-    callback='http://www.flaaare.com/';
-    url='http://freefallsocial.appspot.com/login/'+sessionid+'/'+encode(callback);
-    $('#googleLogin').attr('href', url);
-    $('#login').show();
-  }
 }
 
 function update()
