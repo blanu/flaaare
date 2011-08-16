@@ -69,7 +69,7 @@ function update()
   log('status: '+status);
   log('time: '+time);
 
-  $.post('/setState', {'status': status, 'time': time});
+  $.post('/setState', JSON.stringify({'status': status, 'time': time}));
 
   return false;
 }
