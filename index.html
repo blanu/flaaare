@@ -1,13 +1,20 @@
-<html>
+<!doctype html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
     <title>Wavetabs - Like Wave Only With Tabs</title>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <link href="styles/style.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
-    <div id="login" class="hidden">
-      <a id="googleLogin" href="">Login with Google</a>
+    <div id="loginDiv" class="hidden">
+      <fb:login-button/>
     </div>
+    <br/>
+    <div id="logoutDiv">
+      <button id="logout">Logout</button>
+    </div>
+    <div id="user-info" style="display: none;"></div>
+    <div id="fb-root"></div>
     <div id="tabs" class="hidden">
       <ul>
         <li>
@@ -23,8 +30,10 @@
     </div>
   </body>
 
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="scripts/debug.js"></script>
-  <script type="text/javascript" src="scripts/index.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
+  <script src="http://connect.facebook.net/en_US/all.js"></script>
+  <script src="scripts/debug.js"></script>
+  <script src="scripts/index.js"></script>
+  <script src="scripts/login.js"></script>
 </html>
