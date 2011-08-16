@@ -53,8 +53,8 @@ function loggedIn(response)
     }
   );
 
-  $.getJSON('http://www.flaaare.com/facebook/friends', gotFriends);
   getState();
+  $.getJSON('http://www.flaaare.com/facebook/friends', gotFriends);
 }
 
 function login()
