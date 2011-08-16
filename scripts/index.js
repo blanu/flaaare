@@ -64,7 +64,7 @@ function gotLogin(result)
 
 function update()
 {
-  var status=$('#updateField').text();
+  var status=$('#updateField').val();
   log('status: '+status);
   return false;
 }
