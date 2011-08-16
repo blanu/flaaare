@@ -64,7 +64,19 @@ function update()
   log('status: '+status);
   log('time: '+time);
 
-  $.post('/setState', JSON.stringify({'status': status, 'time': time}));
+  var state={'status': status, 'time': time};
+  $.post('/setState', JSON.stringify(state));
+
+  getState(state);
+
+  return false;
+}
+
+function extinguish()
+{
+  $.post('/setState', JSON.stringify(null));
+
+  getState(null);
 
   return false;
 }
@@ -76,6 +88,7 @@ function initIndex()
   $("#people").show();
 
   $('#updateButton').click(update);
+  $('#extinguishButton').click(extinguish);
 }
 
 $(document).ready(initIndex);
