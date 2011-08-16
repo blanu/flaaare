@@ -33,6 +33,7 @@ function encode(input)
 
 function getState()
 {
+  log('getState');
   $.getJSON('/getState', gotState);
 }
 
