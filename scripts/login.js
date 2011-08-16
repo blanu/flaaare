@@ -40,7 +40,6 @@ function loggedIn(response)
     $('#user-info').show('fast');
     $('#logoutDiv').show('fast');
     $('#loginDiv').hide('fast');
-    $('#update').show('fast');
   }
 
   FB.api(

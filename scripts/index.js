@@ -42,10 +42,19 @@ function gotState(result)
   log('gotState');
   log(result);
 
-  $('#flareStatus').text(result.status);
-  $('#flareTime').text(result.time);
+  if(result==null)
+  {
+    $('#update').show('fast');
+    $('#flares').hide('fast');
+  }
+  else
+  {
+    $('#update').hide('fast');
+    $('#flareStatus').text(result.status);
+    $('#flareTime').text(result.time);
 
-  $('#flares').show('slow');
+    $('#flares').show('slow');
+  }
 }
 
 function update()
