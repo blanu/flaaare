@@ -68,6 +68,9 @@ function update()
   var time=$('#updateTime').val();
   log('status: '+status);
   log('time: '+time);
+
+  $.post('/setState', {'status': status, 'time': time});
+
   return false;
 }
 
