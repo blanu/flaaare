@@ -62,11 +62,19 @@ function gotLogin(result)
   }
 }
 
+function update()
+{
+  var status=$('#updateField').text();
+  console('status: '+status);
+}
+
 function initIndex()
 {
   $("#tabs").tabs({'cache': true});
   $("#tabs").show();
   $("#people").show();
+
+  $('#updateButton').click(update);
 }
 
 $(document).ready(initIndex);
