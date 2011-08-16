@@ -21,7 +21,7 @@ function gotFriends(data)
     }
     else
     {
-      s=s+'<td><img src="https://wave.google.com/wave/static/images/unknown.jpg"/></td>';
+      s=s+'<td><img class="unknownIcon" src="https://wave.google.com/wave/static/images/unknown.jpg"/></td>';
     }
     s=s+'<td>'+friends[x].name+'</td>';
     s=s+'</tr>';
