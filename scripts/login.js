@@ -1,14 +1,8 @@
 function gotFriends(data)
 {
   console.log('gotFriends');
-  console.log(data);
 
   var friends=data.data;
-  for(x in friends)
-  {
-    console.log(friends[x].name);
-  }
-
   $('.friends').empty();
 
   s='<table>';
