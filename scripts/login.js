@@ -37,6 +37,7 @@ function loggedIn(response)
     $('#user-info').hide('fast');
     $('#logoutDiv').hide('fast');
     $('#loginDiv').show('fast');
+    $('#update').hide('fast');
     return;
   }
   else
@@ -44,6 +45,7 @@ function loggedIn(response)
     $('#user-info').show('fast');
     $('#logoutDiv').show('fast');
     $('#loginDiv').hide('fast');
+    $('#update').show('fast');
   }
 
   FB.api(
