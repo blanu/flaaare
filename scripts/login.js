@@ -1,8 +1,3 @@
-function clearDisplay()
-{
-  $('#user-info').hide('fast');
-}
-
 function gotFriends(data)
 {
   console.log('gotFriends');
@@ -19,8 +14,16 @@ function loggedIn(response)
 {
   if (!response.session)
   {
-    clearDisplay();
+    $('#user-info').hide('fast');
+    $('#logoutDiv').hide('fast');
+    $('#loginDiv').show('fast');
     return;
+  }
+  else
+  {
+    $('#user-info').show('fast');
+    $('#logoutDiv').show('fast');
+    $('#loginDiv').hide('fast');
   }
 
   FB.api(
@@ -39,21 +42,19 @@ function loggedIn(response)
 
 function login()
 {
+  $('#user-info').hide('fast');
+  $('#logoutDiv').hide('fast');
+  $('#loginDiv').hide('fast');
+
   FB.init({ apiKey: '248930761793687', status: true, cookie: true, xfbml: true });
   FB.getLoginStatus(loggedIn);
 
   $('#login').bind('click', function() {
-    FB.login(handleSessionResponse);
+    FB.login(loggedIn);
   });
 
   $('#logout').bind('click', function() {
-    FB.logout(handleSessionResponse);
-  });
-
-  $('#disconnect').bind('click', function() {
-    FB.api({ method: 'Auth.revokeAuthorization' }, function(response) {
-      clearDisplay();
-    });
+    FB.logout(loggedIn);
   });
 }
 
