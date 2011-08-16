@@ -63,7 +63,7 @@
 
       function gotFriends(data)
       {
-        alert(data);
+        console.log('gotFriends');
       }
 
       // handle a session response from any of the auth related calls
@@ -86,7 +86,6 @@
           }
         );
 
-        alert('getJSON');
         $.getJSON('http://www.flaaare.com/facebook/friends', gotFriends);
       }
     </script>
