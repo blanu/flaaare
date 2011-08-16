@@ -37,7 +37,7 @@
     <script src="http://connect.facebook.net/en_US/all.js"></script>
     <script>
       // initialize the library with the API key
-      FB.init({ apiKey: '248930761793687', status: true, cookie: true, xfbml: true, oauth: true });
+      FB.init({ apiKey: '248930761793687', status: true, cookie: true, xfbml: true });
 
       // fetch the status on load
       FB.getLoginStatus(handleSessionResponse);
@@ -86,7 +86,8 @@
           }
         );
 
-        $.getJSON('/facebook/friends', gotFriends);
+        alert('getJSON');
+        $.getJSON('http://www.flaaare.com/facebook/friends', gotFriends);
       }
     </script>
   </body>
