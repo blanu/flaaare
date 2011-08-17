@@ -46,18 +46,18 @@ function loggedIn(response)
 {
   if (!response.session)
   {
-    $('#user-info').hide('fast');
-    $('#logoutDiv').hide('fast');
-    $('#loginDiv').show('fast');
-    $('#update').hide('fast');
-    $('#flares').hide('fast');
+    $('#user-info').hide('slow');
+    $('#logoutDiv').hide('slow');
+    $('#loginDiv').show('slow');
+    $('#update').hide('slow');
+    $('#flares').hide('slow');
     return;
   }
   else
   {
-    $('#user-info').show('fast');
-    $('#logoutDiv').show('fast');
-    $('#loginDiv').hide('fast');
+    $('#user-info').show('slow');
+    $('#logoutDiv').show('slow');
+    $('#loginDiv').hide('slow');
   }
 
   FB.api(
@@ -67,7 +67,7 @@ function loggedIn(response)
     },
     function(response) {
       var user = response[0];
-     $('#user-info').html('<img src="' + user.pic + '">' + user.name).show('fast');
+     $('#user-info').html('<img src="' + user.pic + '">' + user.name).show('slow');
     }
   );
 
@@ -77,9 +77,9 @@ function loggedIn(response)
 
 function login()
 {
-  $('#user-info').hide('fast');
-  $('#logoutDiv').hide('fast');
-  $('#loginDiv').hide('fast');
+  $('#user-info').hide('slow');
+  $('#logoutDiv').hide('slow');
+  $('#loginDiv').hide('slow');
 
   FB.init({ apiKey: '248930761793687', status: true, cookie: true, xfbml: true });
   FB.getLoginStatus(loggedIn);
