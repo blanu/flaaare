@@ -11,17 +11,21 @@ function gotState(result)
 
   if(result==null)
   {
-    $('#update').show('slow');
     $('#flares').hide('slow');
+
+    $('#update').removeClass('hidden');
+    $('#update').addClass('inline');
   }
   else
   {
     log('hiding update');
-    $('#update').hide('slow');
     $('#flareStatus').text(result.status);
     $('#flareTime').text(result.time);
 
     $('#flares').show('slow');
+
+    $('#update').removeClass('inline');
+    $('#update').addClass('hidden');
   }
 }
 
