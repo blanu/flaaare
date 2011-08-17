@@ -19,7 +19,7 @@ function gotState(result)
     $('#flareStatus').text(result.status);
     $('#flareTime').text(result.time);
     $('#flares').show('slow');
-    $('#update').show('slow');
+    $('#update').hide('slow');
   }
 }
 
