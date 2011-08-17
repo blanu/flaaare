@@ -33,7 +33,7 @@ function update()
   var state={'status': status, 'time': time};
   $.post('/setState', JSON.stringify(state));
 
-  getState(state);
+  gotState(state);
 
   return false;
 }
@@ -42,7 +42,7 @@ function extinguish()
 {
   $.post('/setState', JSON.stringify(null));
 
-  getState(null);
+  gotState(null);
 
   return false;
 }
