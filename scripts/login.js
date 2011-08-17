@@ -18,11 +18,11 @@ function gotFriends(data)
       s=s+'<tr><td>';
       if(typeof(friends[x].image)!==undefined && friends[x].image!=null && friends[x].image!='null')
       {
-        s=s+'<td><img src="'+friends[x].image+'"/></td>';
+        s=s+'<td><img class="icon" src="'+friends[x].image+'"/></td>';
       }
       else
       {
-        s=s+'<td><img class="unknownIcon" src="https://wave.google.com/wave/static/images/unknown.jpg"/></td>';
+        s=s+'<td><img class="icon" src="https://wave.google.com/wave/static/images/unknown.jpg"/></td>';
       }
 
       s=s+'<td>'+friends[x].name+'</td>';
@@ -67,7 +67,7 @@ function loggedIn(response)
     },
     function(response) {
       var user = response[0];
-     $('#user-info').html('<img src="' + user.pic + '">' + user.name).show('slow');
+     $('#user-info').html('<img class="icon" src="' + user.pic + '">' + user.name).show('slow');
     }
   );
 
