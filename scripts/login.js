@@ -5,26 +5,40 @@ function gotFriends(data)
   var friends=data.data;
   $('.friends').empty();
 
+  var found=false;
+
   s='<table>';
+
   for(var x=0; x<friends.length; x++)
   {
-    s=s+'<tr><td>';
-    if(typeof(friends[x].image)!==undefined && friends[x].image!=null && friends[x].image!='null')
-    {
-      s=s+'<td><img src="'+friends[x].image+'"/></td>';
-    }
-    else
-    {
-      s=s+'<td><img class="unknownIcon" src="https://wave.google.com/wave/static/images/unknown.jpg"/></td>';
-    }
-    s=s+'<td>'+friends[x].name+'</td>';
     if(friends[x].data!=null)
     {
-      s=s+'<td>'+friends[x].data+'</td>';
+      found=true;
+
+      s=s+'<tr><td>';
+      if(typeof(friends[x].image)!==undefined && friends[x].image!=null && friends[x].image!='null')
+      {
+        s=s+'<td><img src="'+friends[x].image+'"/></td>';
+      }
+      else
+      {
+        s=s+'<td><img class="unknownIcon" src="https://wave.google.com/wave/static/images/unknown.jpg"/></td>';
+      }
+
+      s=s+'<td>'+friends[x].name+'</td>';
+      s=s+'<td>'+friends[x].data.status+' for '+friends[x].data.time+'</td>';
+
+      s=s+'</tr>';
     }
-    s=s+'</tr>';
   }
+
   s=s+'</table>'
+
+  if(!found)
+  {
+    s="Nothin' doin'.";
+  }
+
   $('.friends').append(s);
 }
 
