@@ -18,6 +18,10 @@ function gotFriends(data)
       s=s+'<td><img class="unknownIcon" src="https://wave.google.com/wave/static/images/unknown.jpg"/></td>';
     }
     s=s+'<td>'+friends[x].name+'</td>';
+    if(friends[x].data!=null)
+    {
+      s=s+'<td>'+friends[x].data+'</td>';
+    }
     s=s+'</tr>';
   }
   s=s+'</table>'
