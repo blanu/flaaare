@@ -16,6 +16,7 @@ function gotState(result)
   }
   else
   {
+    log('hiding update');
     $('#update').hide('slow');
     $('#flareStatus').text(result.status);
     $('#flareTime').text(result.time);
