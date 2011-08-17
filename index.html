@@ -14,8 +14,11 @@
     <div id="logoutDiv">
       <button id="logout">Logout</button>
     </div>
-    <span id="user-info" class="hidden"></span>
-    <div id="update">
+    <table>
+    <tr>
+    <td><span id="user-info" class="hidden"></span></td>
+    <td>
+     <div id="update">
       <form>
         <textarea id="updateField"></textarea>
         <select id="updateTime">
@@ -32,11 +35,16 @@
         </select>
         <button id="updateButton">Light a Flare!</button>
       </form>
-    </div>
-    <span id="flares">
-      <span id="flareStatus"></span> for <span id="flareTime"></span>
-      <button id="extinguishButton">Extinguish</button>
-    </span>
+     </div>
+    </td>
+    <td>
+     <span id="flares">
+        <span id="flareStatus"></span> for <span id="flareTime"></span>
+        <button id="extinguishButton">Extinguish</button>
+     </span>
+    </td>
+    </tr>
+    </table>
     <div id="tabs" class="hidden">
       <ul>
         <li>
