@@ -1,6 +1,7 @@
 function gotFriends(data)
 {
   console.log('gotFriends');
+  var now=new Date().getTime()/(60*1000);
 
   var friends=data.data;
   $('.friends').empty();
@@ -26,7 +27,16 @@ function gotFriends(data)
       }
 
       s=s+'<td>'+friends[x].name+'</td>';
-      s=s+'<td> is '+friends[x].data.status+' at '+friends[x].data.where+' for '+formatTime(friends[x].data.time)+'</td>';
+
+      var utime=Math.round(friends[x].time-now);
+      if(utime>0)
+      {
+        s=s+'<td> is '+friends[x].data.status+' at '+friends[x].data.where+' for '+formatTime(friends[x].data.time)+'</td>';
+      }
+      else
+      {
+        s=s+'<td> was '+friends[x].data.status+' at '+friends[x].data.where+formatTime(friends[x].data.time)+' ago</td>';
+      }
 
       s=s+'</tr>';
     }

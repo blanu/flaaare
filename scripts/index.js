@@ -4,10 +4,11 @@ function formatTime(time)
   var utime=Math.round(time-now);
   log('Print Time: '+now+' '+time+' '+utime);
 
-  if(utime<=0)
+  if(utime<0)
   {
-    return 'the past';
+    utime=Math.abs(utime);
   }
+
   if(utime<60)
   {
     return utime.toString()+' minutes';
