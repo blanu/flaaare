@@ -7,6 +7,10 @@ function formatTime(time)
   else
   {
     time=time/60;
+    if(time==1.0)
+    {
+      return '1 hour';
+    }
     if(time==1.5)
     {
       return '1 and a half hours';
