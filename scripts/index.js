@@ -89,7 +89,6 @@ function extinguish()
 function initIndex()
 {
   $("#tabs").tabs({'cache': true});
-  $("#tabs").show();
   $("#people").show();
 
   $('#updateButton').click(update);

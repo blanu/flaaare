@@ -1,3 +1,5 @@
+var timer=null;
+
 function gotFriends(data)
 {
   console.log('gotFriends');
@@ -63,23 +65,29 @@ function refresh()
   getFriends();
 }
 
-function loggedIn(response)
+function get_cookies_array()
 {
-  if (!response.session)
+  var cookies = { };
+  if (document.cookie && document.cookie != '')
   {
-    $('#user-info').hide('slow');
-    $('#logoutDiv').hide('slow');
-    $('#loginDiv').show('slow');
-    $('#update').hide('slow');
-    $('#flares').hide('slow');
-    return;
+    var split = document.cookie.split(';');
+    for (var i = 0; i < split.length; i++)
+    {
+      var name_value = split[i].split("=");
+      name_value[0] = name_value[0].replace(/^ /, '');
+      cookies[decodeURIComponent(name_value[0])] = decodeURIComponent(name_value[1]);
+    }
   }
-  else
-  {
-    $('#user-info').show('slow');
-    $('#logoutDiv').show('slow');
-    $('#loginDiv').hide('slow');
-  }
+
+  return cookies;
+}
+
+function initLogin()
+{
+  $('#user-info').show('slow');
+  $('#logoutDiv').show('slow');
+  $('#loginDiv').hide('slow');
+  $('#tabs').show('slow');
 
   FB.api(
     {
@@ -96,11 +104,55 @@ function loggedIn(response)
   window.setInterval(refresh, 60*1000);
 }
 
+function initLogout()
+{
+  window.clearInterval(timer);
+  $('#user-info').hide('slow');
+  $('#logoutDiv').hide('slow');
+  $('#loginDiv').show('slow');
+  $('#update').hide('slow');
+  $('#flares').hide('slow');
+  $('#tabs').hide('slow');
+}
+
+function checkLoggedIn()
+{
+  log('checking logged in...');
+  var cookies = get_cookies_array();
+  for(var name in cookies)
+  {
+    if(name.indexOf('fbs_')==0)
+    {
+      if(timer!=null)
+      {
+        log('logged in!');
+        window.clearInterval(timer);
+        init();
+      }
+      break;
+    }
+  }
+}
+
+function loggedIn(response)
+{
+  if (!response.session)
+  {
+    initLogout();
+  }
+  else
+  {
+    initLogin();
+  }
+}
+
 function login()
 {
   $('#user-info').hide('slow');
   $('#logoutDiv').hide('slow');
   $('#loginDiv').hide('slow');
+
+  timer=window.setInterval(checkLoggedIn, 1000);
 
   FB.init({ apiKey: '248930761793687', status: true, cookie: true, xfbml: true });
   FB.getLoginStatus(loggedIn);
