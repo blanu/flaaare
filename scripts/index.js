@@ -1,7 +1,7 @@
 function formatTime(time)
 {
   var now=new Date().getTime()/(60*1000);
-  var utime=time-now;
+  var utime=Math.round(time-now);
   log('Print Time: '+now+' '+time+' '+utime);
 
   if(utime<=0)
