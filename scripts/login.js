@@ -42,6 +42,11 @@ function gotFriends(data)
   $('.friends').append(s);
 }
 
+function getFriends()
+{
+  $.getJSON('http://www.flaaare.com/facebook/friends', gotFriends);
+}
+
 function loggedIn(response)
 {
   if (!response.session)
@@ -72,7 +77,8 @@ function loggedIn(response)
   );
 
   getState();
-  $.getJSON('http://www.flaaare.com/facebook/friends', gotFriends);
+  getFriends()
+  window.setInterval(getFriends, 60*1000);
 }
 
 function login()
