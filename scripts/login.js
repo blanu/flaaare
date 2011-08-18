@@ -26,7 +26,7 @@ function gotFriends(data)
       }
 
       s=s+'<td>'+friends[x].name+'</td>';
-      s=s+'<td>'+friends[x].data.status+' at '+friends[x].data.where+' for '+friends[x].data.time+'</td>';
+      s=s+'<td>'+friends[x].data.status+' at '+friends[x].data.where+' for '+formatTime(friends[x].data.time)+'</td>';
 
       s=s+'</tr>';
     }

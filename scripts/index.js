@@ -1,3 +1,23 @@
+function formatTime(time)
+{
+  if(time<60)
+  {
+    return time.toString()+' minutes';
+  }
+  else
+  {
+    time=time/60;
+    if(time==1.5)
+    {
+      return '1 and a half hours';
+    }
+    else
+    {
+      return time.toString()+' hours';
+    }
+  }
+}
+
 function getState()
 {
   log('getState');
@@ -18,7 +38,7 @@ function gotState(result)
   {
     $('#flareStatus').text(result.status);
     $('#flareWhere').text(result.where);
-    $('#flareTime').text(result.time);
+    $('#flareTime').text(formatTime(result.time));
     $('#flares').show('slow');
     $('#update').hide('slow');
   }
