@@ -164,12 +164,6 @@ function loggedIn(response)
 function login()
 {
   log('login');
-  $('#user-info').hide('slow');
-  $('#logoutDiv').hide('slow');
-  $('#loginDiv').hide('slow');
-
-  timer=window.setInterval(checkLoggedIn, 1000);
-
   FB.init({ apiKey: '248930761793687', status: true, cookie: true, xfbml: true });
   FB.getLoginStatus(loggedIn);
 
