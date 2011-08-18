@@ -15,7 +15,7 @@ function formatTime(time)
   else
   {
     hours=Math.floor(utime/60);
-    minutes=utime%60;
+    minutes=Math.round(utime%60);
     if(hours==1.0 && minutes==0.0)
     {
       return '1 hour';
