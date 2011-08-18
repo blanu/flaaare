@@ -94,6 +94,7 @@ function initLogin()
   $('#logoutDiv').show('slow');
   $('#loginDiv').hide('slow');
   $('#tabs').show('slow');
+  $('#people').show('slow');
 
   FB.api(
     {
@@ -124,6 +125,7 @@ function initLogout()
   $('#update').hide('slow');
   $('#flares').hide('slow');
   $('#tabs').hide('slow');
+  $('#people').hide('slow');
 
   timer=window.setInterval(checkLoggedIn, 1000);
 
