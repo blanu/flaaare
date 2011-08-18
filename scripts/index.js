@@ -17,6 +17,7 @@ function gotState(result)
   else
   {
     $('#flareStatus').text(result.status);
+    $('#flareWhere').text(result.where);
     $('#flareTime').text(result.time);
     $('#flares').show('slow');
     $('#update').hide('slow');
@@ -26,11 +27,12 @@ function gotState(result)
 function update()
 {
   var status=$('#updateField').val();
+  var where=$('#updateWhere').val();
   var time=$('#updateTime').val();
   log('status: '+status);
   log('time: '+time);
 
-  var state={'status': status, 'time': time};
+  var state={'status': status, 'where': where, 'time': time};
   $.post('/setState', JSON.stringify(state));
 
   gotState(state);
