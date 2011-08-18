@@ -124,6 +124,8 @@ function initLogout()
   $('#tabs').hide('slow');
 
   timer=window.setInterval(checkLoggedIn, 1000);
+
+  login();
 }
 
 function checkLoggedIn()
