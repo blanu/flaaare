@@ -66,7 +66,7 @@ function update()
   log('status: '+status);
   log('time: '+time);
 
-  var now=new Date().getTime()/(60*1000);
+  var now=Math.round(new Date().getTime()/(60*1000));
   log('Send Time: '+now+' '+time+' '+(now+time));
 
   var state={'status': status, 'where': where, 'time': now+time};
