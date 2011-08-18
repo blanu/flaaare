@@ -84,6 +84,7 @@ function get_cookies_array()
 
 function initLogin()
 {
+  log('initLogin');
   if(timer!=null)
   {
     window.clearInterval(timer);
@@ -111,6 +112,7 @@ function initLogin()
 
 function initLogout()
 {
+  log('initLogout');
   if(timer!=null)
   {
     window.clearInterval(timer);
@@ -161,6 +163,7 @@ function loggedIn(response)
 
 function login()
 {
+  log('login');
   $('#user-info').hide('slow');
   $('#logoutDiv').hide('slow');
   $('#loginDiv').hide('slow');
