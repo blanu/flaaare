@@ -127,7 +127,7 @@ function checkLoggedIn()
       {
         log('logged in!');
         window.clearInterval(timer);
-        init();
+        initLogin();
       }
       break;
     }
