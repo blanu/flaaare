@@ -57,7 +57,7 @@ function update()
 {
   var status=$('#updateField').val();
   var where=$('#updateWhere').val();
-  var time=$('#updateTime').val();
+  var time=parseFloat($('#updateTime').val());
   log('status: '+status);
   log('time: '+time);
 
