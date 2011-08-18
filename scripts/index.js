@@ -20,6 +20,10 @@ function formatTime(time)
     {
       return '1 hour';
     }
+    else if(hours==1.0)
+    {
+      return hours.toString()+' hour and '+minutes.toString()+' minutes';
+    }
     else
     {
       return hours.toString()+' hours and '+minutes.toString()+' minutes';
