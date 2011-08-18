@@ -35,7 +35,7 @@ function gotFriends(data)
       }
       else
       {
-        s=s+'<td> was '+friends[x].data.status+' at '+friends[x].data.where+formatTime(friends[x].data.time)+' ago</td>';
+        s=s+'<td> was '+friends[x].data.status+' at '+friends[x].data.where+' '+formatTime(friends[x].data.time)+' ago</td>';
       }
 
       s=s+'</tr>';
