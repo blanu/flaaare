@@ -1,23 +1,27 @@
 function formatTime(time)
 {
-  if(time<60)
+  var now=new Date().getTime()/(60*1000);
+  var utime=time-now;
+
+  if(utime<=0)
   {
-    return time.toString()+' minutes';
+    return 'the past';
+  }
+  if(utime<60)
+  {
+    return utime.toString()+' minutes';
   }
   else
   {
-    time=time/60;
-    if(time==1.0)
+    hours=Math.floor(utime/60);
+    minutes=utime%60;
+    if(hours==1.0 && minutes==0.0)
     {
       return '1 hour';
     }
-    if(time==1.5)
-    {
-      return '1 and a half hours';
-    }
     else
     {
-      return time.toString()+' hours';
+      return hours.toString()+' hours and '+minutes.toString()+' minutes';
     }
   }
 }
@@ -56,7 +60,9 @@ function update()
   log('status: '+status);
   log('time: '+time);
 
-  var state={'status': status, 'where': where, 'time': time};
+  var now=new Date().getTime()/(60*1000);
+
+  var state={'status': status, 'where': where, 'time': now+time};
   $.post('/setState', JSON.stringify(state));
 
   gotState(state);
