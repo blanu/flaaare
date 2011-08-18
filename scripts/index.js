@@ -2,6 +2,7 @@ function formatTime(time)
 {
   var now=new Date().getTime()/(60*1000);
   var utime=time-now;
+  log('Print Time: '+now+' '+time+' '+utime);
 
   if(utime<=0)
   {
@@ -61,6 +62,7 @@ function update()
   log('time: '+time);
 
   var now=new Date().getTime()/(60*1000);
+  log('Send Time: '+now+' '+time+' '+(now+time));
 
   var state={'status': status, 'where': where, 'time': now+time};
   $.post('/setState', JSON.stringify(state));
