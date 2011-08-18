@@ -84,6 +84,11 @@ function get_cookies_array()
 
 function initLogin()
 {
+  if(timer!=null)
+  {
+    window.clearInterval(timer);
+  }
+
   $('#user-info').show('slow');
   $('#logoutDiv').show('slow');
   $('#loginDiv').hide('slow');
@@ -106,13 +111,19 @@ function initLogin()
 
 function initLogout()
 {
-  window.clearInterval(timer);
+  if(timer!=null)
+  {
+    window.clearInterval(timer);
+  }
+
   $('#user-info').hide('slow');
   $('#logoutDiv').hide('slow');
   $('#loginDiv').show('slow');
   $('#update').hide('slow');
   $('#flares').hide('slow');
   $('#tabs').hide('slow');
+
+  timer=window.setInterval(checkLoggedIn, 1000);
 }
 
 function checkLoggedIn()
