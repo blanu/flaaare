@@ -35,7 +35,7 @@ function formatTime(time)
 function getState()
 {
   log('getState');
-  $.getJSON('/getState', gotState);
+  $.getJSON('http://www.flaaare.com/getState', gotState);
 }
 
 function gotState(result)
@@ -70,7 +70,7 @@ function update()
   log('Send Time: '+now+' '+time+' '+(now+time));
 
   var state={'status': status, 'where': where, 'time': now+time};
-  $.post('/setState', JSON.stringify(state));
+  $.post('http://www.flaaare.com/setState', JSON.stringify(state));
 
   gotState(state);
 
@@ -79,7 +79,7 @@ function update()
 
 function extinguish()
 {
-  $.post('/setState', JSON.stringify(null));
+  $.post('http://www.flaaare.com/setState', JSON.stringify(null));
 
   gotState(null);
 
