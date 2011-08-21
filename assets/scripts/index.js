@@ -50,6 +50,21 @@ function gotState(result)
   }
   else
   {
+    var now=new Date().getTime()/(60*1000);
+    var utime=Math.round(result.time-now);
+    if(utime>0)
+    {
+      $('#flareIsWas').text('is');
+      $('#flareFor').text('for');
+      $('#flareAgo').text('');
+    }
+    else
+    {
+      $('#flareIsWas').text('was');
+      $('#flareFor').text('');
+      $('#flareAgo').text('ago');
+    }
+
     $('#flareStatus').text(result.status);
     $('#flareWhere').text(result.where);
     $('#flareTime').text(formatTime(result.time));
