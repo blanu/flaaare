@@ -17,7 +17,7 @@ function gotFriends(data)
     if(friends[x].data!=null)
     {
       var utime=Math.round(friends[x].data.time-now);
-      if(utime<-86400)
+      if(utime<-1440)
       {
         continue;
       }
