@@ -86,8 +86,35 @@ function extinguish()
   return false;
 }
 
+function checkPhoneGap()
+{
+  if(window.location.index['file://']==0)
+  {
+    window.location='http://www.flaaare.com/';
+  }
+}
+
+function checkMobile()
+{
+  if(screen.width < 500 ||
+   navigator.userAgent.match(/Android/i) ||
+   navigator.userAgent.match(/webOS/i) ||
+   navigator.userAgent.match(/iPhone/i) ||
+   navigator.userAgent.match(/iPod/i)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
 function initIndex()
 {
+  checkPhoneGap();
+  log('mobile: '+checkMobile());
+
   $("#tabs").tabs({'cache': true});
   $("#people").show();
 
