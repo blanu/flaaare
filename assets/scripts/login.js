@@ -16,6 +16,12 @@ function gotFriends(data)
   {
     if(friends[x].data!=null)
     {
+      var utime=Math.round(friends[x].data.time-now);
+      if(utime<-86400)
+      {
+        continue;
+      }
+
       found=true;
 
       s=s+'<tr><td>';
@@ -30,7 +36,6 @@ function gotFriends(data)
 
       s=s+'<td>'+friends[x].name+'</td>';
 
-      var utime=Math.round(friends[x].data.time-now);
       if(utime>0)
       {
         s=s+'<td> is '+friends[x].data.status+' at '+friends[x].data.where+' for '+formatTime(friends[x].data.time)+'</td>';
