@@ -88,7 +88,7 @@ function extinguish()
 
 function checkPhoneGap()
 {
-  if(window.location.index['file://']==0)
+  if(window.location.indexOf['file://']==0)
   {
     window.location='http://www.flaaare.com/';
   }
