@@ -125,6 +125,11 @@ function checkMobile()
   }
 }
 
+function checkEmbed()
+{
+  return top!==self;
+}
+
 function initIndex()
 {
   checkPhoneGap();
