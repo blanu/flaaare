@@ -100,6 +100,7 @@ function initLogin()
   $('#tabs').show('slow');
   $('#people').show('slow');
   $('#bookmark').show('slow');
+  $('#like').show('slow');
 
   // Don't show logout button when browsing from inside of Facebook
   if(!checkEmbed())
