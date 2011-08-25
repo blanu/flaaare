@@ -23,11 +23,25 @@ function formatTime(time)
     }
     else if(hours==1.0)
     {
-      return hours.toString()+' hour and '+minutes.toString()+' minutes';
+      if(minutes==0)
+      {
+        return hours.toString()+' hour';
+      }
+      else
+      {
+        return hours.toString()+' hour and '+minutes.toString()+' minutes';
+      }
     }
     else
     {
-      return hours.toString()+' hours and '+minutes.toString()+' minutes';
+      if(minutes==0)
+      {
+        return hours.toString()+' hours';
+      }
+      else
+      {
+        return hours.toString()+' hours and '+minutes.toString()+' minutes';
+      }
     }
   }
 }
