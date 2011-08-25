@@ -101,6 +101,7 @@ function initLogin()
   $('#people').show('slow');
   $('#bookmark').show('slow');
   $('#like').show('slow');
+  $('#invite').show('slow');
 
   // Don't show logout button when browsing from inside of Facebook
   if(!checkEmbed())
@@ -138,6 +139,9 @@ function initLogout()
   $('#flares').hide('slow');
   $('#tabs').hide('slow');
   $('#people').hide('slow');
+  $('#bookmark').hide('slow');
+  $('#like').hide('slow');
+  $('#invite').hide('slow');
 
   timer=window.setInterval(checkLoggedIn, 1000);
 

@@ -101,6 +101,11 @@ function extinguish()
   return false;
 }
 
+function invite()
+{
+  FB.ui({ method: 'apprequests', message: 'Invite friends to use Flaaare'});
+}
+
 function checkPhoneGap()
 {
   if(window.location.href.indexOf['file://']==0)
@@ -140,6 +145,7 @@ function initIndex()
 
   $('#updateButton').click(update);
   $('#extinguishButton').click(extinguish);
+  $('#inviteButton').click(invite);
 }
 
 $(document).ready(initIndex);
